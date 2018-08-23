@@ -17,27 +17,6 @@ class ViewController: UIViewController {
 
 //    let's avoid polluting viewDidLoad
 //    {} is referred to as closure, or anon. functions
-    let bearImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "bear_first"))
-        imageView.contentMode = .scaleAspectFit
-//        this enables autolayout for imageView
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    let descriptionTextView: UITextView = {
-        let textView = UITextView()
-        
-        let attributedText = NSMutableAttributedString(string: "Join us today in our fun and games!", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
-        attributedText.append(NSAttributedString(string: "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor.gray]))
-        textView.attributedText = attributedText
-        
-        textView.textAlignment = .center
-        textView.isEditable = false
-        textView.isScrollEnabled = false
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()
     
     private let previousButton: UIButton = {
         let button = UIButton(type: .system)
@@ -71,13 +50,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(descriptionTextView)
-        
-        setupBottomControls()
-        
-        setupLayout()
-        
+        setupBottomControls()        
     }
     
     private func setupBottomControls() {
@@ -107,34 +80,6 @@ class ViewController: UIViewController {
             bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
             ])
-    }
-    
-    private func setupLayout() {
-        let topImageContainerView = UIView()
-//        topImageContainerView.backgroundColor = .blue
-        view.addSubview(topImageContainerView)
-
-//        enable auto layout
-        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        topImageContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        
-        topImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        topImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        topImageContainerView.addSubview(bearImageView)
-        bearImageView.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor).isActive = true
-        bearImageView.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor).isActive = true
-        bearImageView.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5).isActive = true
-        
-//        topImageContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        topImageContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        topImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
-        
-        descriptionTextView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor).isActive = true
-        descriptionTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
-        descriptionTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
-        descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
 }
 
