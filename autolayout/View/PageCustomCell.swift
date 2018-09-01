@@ -7,33 +7,46 @@
 //
 
 import UIKit
-//customer cell
+
 class PageCustomCell: UICollectionViewCell {
     
-    let bearImageView: UIImageView = {
+    var page: Page? {
+        didSet {
+//            print(page?.imageName)
+//            bearImageView.image = UIImage(named: page!.imageName)
+            guard let unwrappedPage = page else { return }
+            bearImageView.image = UIImage(named: unwrappedPage.imageName)
+            
+            let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
+            attributedText.append(NSAttributedString(string: "\n\n\n\(unwrappedPage.bodyText)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor.gray]))
+            descriptionTextView.attributedText = attributedText
+            descriptionTextView.textAlignment = .center
+        }
+    }
+    
+    private let bearImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "bear_first"))
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let descriptionTextView: UITextView = {
+    private let descriptionTextView: UITextView = {
         let textView = UITextView()
         
         let attributedText = NSMutableAttributedString(string: "Join us today in our fun and games!", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
         attributedText.append(NSAttributedString(string: "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor.gray]))
         textView.attributedText = attributedText
-        
+        textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment = .center
         textView.isEditable = false
         textView.isScrollEnabled = false
-        textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = .yellow
+
         setupLayout()
     }
     
@@ -43,7 +56,7 @@ class PageCustomCell: UICollectionViewCell {
     
     private func setupLayout() {
         let topImageContainerView = UIView()
-//        topImageContainerView.backgroundColor = .blue
+
         addSubview(topImageContainerView)
         
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
