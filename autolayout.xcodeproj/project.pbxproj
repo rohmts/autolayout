@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6952F33B212E5030002F6882 /* SwipingCustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6952F33A212E5030002F6882 /* SwipingCustomController.swift */; };
+		6952F33B212E5030002F6882 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6952F33A212E5030002F6882 /* SwipingController.swift */; };
 		6952F33D212E578F002F6882 /* PageCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6952F33C212E578F002F6882 /* PageCustomCell.swift */; };
+		6996C8DF213B987100CA0F57 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6996C8DE213B987100CA0F57 /* UIColorExtension.swift */; };
 		69EBFCD4213AEB58000C4F0A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBFCD3213AEB58000C4F0A /* Page.swift */; };
 		69F1B0742127E65200EDA9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1B0732127E65200EDA9E3 /* AppDelegate.swift */; };
 		69F1B0762127E65200EDA9E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1B0752127E65200EDA9E3 /* ViewController.swift */; };
@@ -18,8 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6952F33A212E5030002F6882 /* SwipingCustomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCustomController.swift; sourceTree = "<group>"; };
+		6952F33A212E5030002F6882 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		6952F33C212E578F002F6882 /* PageCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCustomCell.swift; sourceTree = "<group>"; };
+		6996C8DE213B987100CA0F57 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		69EBFCD3213AEB58000C4F0A /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		69F1B0702127E65200EDA9E3 /* autolayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autolayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F1B0732127E65200EDA9E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6996C8E0213B98AC00CA0F57 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6996C8DE213B987100CA0F57 /* UIColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		69EBFCD5213AEB5C000C4F0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				69F1B0752127E65200EDA9E3 /* ViewController.swift */,
-				6952F33A212E5030002F6882 /* SwipingCustomController.swift */,
+				6952F33A212E5030002F6882 /* SwipingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -85,6 +95,7 @@
 		69F1B0722127E65200EDA9E3 /* autolayout */ = {
 			isa = PBXGroup;
 			children = (
+				6996C8E0213B98AC00CA0F57 /* Extension */,
 				69EBFCD7213AF2BE000C4F0A /* Controller */,
 				69EBFCD6213AF2B0000C4F0A /* View */,
 				69EBFCD5213AEB5C000C4F0A /* Model */,
@@ -171,8 +182,9 @@
 				69F1B0762127E65200EDA9E3 /* ViewController.swift in Sources */,
 				69F1B0742127E65200EDA9E3 /* AppDelegate.swift in Sources */,
 				6952F33D212E578F002F6882 /* PageCustomCell.swift in Sources */,
-				6952F33B212E5030002F6882 /* SwipingCustomController.swift in Sources */,
+				6952F33B212E5030002F6882 /* SwipingController.swift in Sources */,
 				69EBFCD4213AEB58000C4F0A /* Page.swift in Sources */,
+				6996C8DF213B987100CA0F57 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

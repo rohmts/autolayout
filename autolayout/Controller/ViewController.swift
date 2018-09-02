@@ -8,11 +8,6 @@
 
 import UIKit
 
-extension UIColor {
-    static var currentPageIndicator = UIColor(red: 232/255, green: 68/255, blue: 133/255, alpha: 1)
-    static var pageIndicator = UIColor(red: 249/255, green: 207/255, blue: 224/255, alpha: 1)
-}
-
 class ViewController: UIViewController {
 
 //    let's avoid polluting viewDidLoad
@@ -32,7 +27,7 @@ class ViewController: UIViewController {
         button.setTitle("NEXT", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.currentPageIndicator, for: .normal)
+        button.setTitleColor(.mainPink, for: .normal)
         return button
     }()
     
@@ -42,8 +37,8 @@ class ViewController: UIViewController {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.numberOfPages = 4
-//        let pinkColor = UIColor(red: 232/255, green: 68/255, blue: 133/255, alpha: 1)
-        pc.currentPageIndicatorTintColor = .currentPageIndicator
+
+        pc.currentPageIndicatorTintColor = .mainPink
         pc.pageIndicatorTintColor = .pageIndicator
         return pc
     }()
@@ -54,24 +49,11 @@ class ViewController: UIViewController {
     }
     
     private func setupBottomControls() {
-//        view.addSubview(previousButton)
-//        previousButton.backgroundColor = .red
-//        previousButton.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        
-//        let yellowView = UIView()
-//        yellowView.backgroundColor = .yellow
-        
-//        let greenView = UIView()
-//        greenView.backgroundColor = .green
-        
-//        let blueView = UIView()
-//        blueView.backgroundColor = .blue
-        
         let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
         
         bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
         bottomControlsStackView.distribution = .fillEqually
-//        bottomControlsStackView.axis = .vertical
+
         view.addSubview(bottomControlsStackView)
         
         NSLayoutConstraint.activate([
